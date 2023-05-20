@@ -37,3 +37,9 @@ body {
   );
   border: 0;
 }
+
+.calculator__icons {
+  width: 200px;
+  justify-content: space-around;
+  align-items: center;
+}
