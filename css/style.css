@@ -4,6 +4,7 @@ body {
   font-family: "Roboto", sans-serif;
   width: 100vw;
   height: 100vh;
+  background-color: rgb(65, 61, 61);
 }
 
 .display_flex {
@@ -42,4 +43,60 @@ body {
   width: 12.5rem;
   justify-content: space-around;
   align-items: center;
+}
+
+.display_grid {
+  display: grid;
+}
+
+.calculator__teclado {
+  padding: 0.625rem 0;
+  border-top: 1px solid rgb(211, 203, 164);
+  margin-top: 1.25rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.calculator__teclado-numbers {
+  grid-template-columns: repeat(3, 4.25rem);
+  grid-template-rows: repeat(4, 4.25rem);
+  gap: 20px;
+}
+
+.calculator__teclado-operations {
+  grid-template-columns: repeat(2, 4.25rem);
+  grid-template-rows: repeat(4, 4.25rem);
+  gap: 1.25rem;
+  grid-template-areas:
+    "substract division"
+    "add parenthesis"
+    "product percentage"
+    "equal equal";
+}
+
+.equal {
+  grid-area: equal;
+}
+
+.calculator__teclado-numbers button {
+  border-radius: 50%;
+  border: 0;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.calculator__teclado-operations button {
+  border-radius: 50%;
+  border: 0;
+  font-weight: bold;
+  color: aliceblue;
+  font-size: 20px;
+  background: linear-gradient(
+    45deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(252, 176, 69, 1) 0%,
+    rgba(255, 133, 67, 0.9051995798319328) 67%
+  );
 }
