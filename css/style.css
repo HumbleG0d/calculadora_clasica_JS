@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+.display_flex {
+  display: flex;
+}
+
+.body {
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  flex-direction: column;
+  width: 25vw;
+  height: 70vh;
+  background: linear-gradient(
+    90deg,
+    rgba(25, 37, 58, 1) 0%,
+    rgba(88, 132, 181, 1) 0%,
+    rgba(47, 74, 109, 1) 100%
+  );
+}
+
+.calulator__input {
+  height: 12.5rem;
+  background: linear-gradient(
+    90deg,
+    rgba(25, 37, 58, 1) 0%,
+    rgba(88, 132, 181, 1) 0%,
+    rgba(47, 74, 109, 1) 100%
+  );
+  border: 0;
+}
