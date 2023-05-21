@@ -45,7 +45,7 @@ body {
 }
 
 .calulator__input {
-  width: 29.6875rem;
+  width: 28.75rem;
   height: 6.25rem;
   background: linear-gradient(
     90deg,
@@ -54,6 +54,15 @@ body {
     rgba(47, 74, 109, 1) 100%
   );
   border: 0;
+}
+
+.calulator__input:focus {
+  border: 0;
+  outline: 0.0625rem solid rgb(211, 203, 164);
+  padding: 0 0.625rem;
+  color: aliceblue;
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .calculator__icons {
