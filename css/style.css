@@ -27,9 +27,26 @@ body {
   );
 }
 
+.calculator__window {
+  height: 200px;
+}
+
+.calculator__operations {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.calculator__operations span {
+  margin-right: 1.25rem;
+  color: gray;
+  font-weight: 700;
+  font-size: 1.625rem;
+}
+
 .calulator__input {
   width: 29.6875rem;
-  height: 12.5rem;
+  height: 6.25rem;
   background: linear-gradient(
     90deg,
     rgba(25, 37, 58, 1) 0%,
