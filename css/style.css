@@ -113,6 +113,10 @@ body {
   color: aliceblue;
 }
 
+.button__hover_n:hover {
+  background-color: rgba(47, 74, 109, 1);
+}
+
 .calculator__teclado-operations button {
   border-radius: 50%;
   border: 0;
@@ -125,4 +129,8 @@ body {
     rgba(252, 176, 69, 1) 0%,
     rgba(255, 133, 67, 0.9051995798319328) 67%
   );
+}
+
+.button__hover_o:hover {
+  background-color: rgb(58, 23, 6);
 }
