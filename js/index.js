@@ -50,6 +50,7 @@ function performCalculation(text){
         operation = OPERATIONS.division(parseFloat(text[i - 1]) , parseFloat(text[i + 1]))
         a = operation
         text.splice(i-1, 3 , a)
+        i = 0
       }
     }
     
@@ -74,6 +75,16 @@ function performCalculation(text){
         a = operation
       }
     }
+
+    for(let i = 0 ; i < text.length ; i++){
+      if(text[i] === TYPE_OPERATIONS.PERCENTAGE){
+        operation = OPERATIONS.percetage(parseFloat(text[i - 1]) , parseFloat(text[i + 1]))
+        a = operation
+        text.splice(i-1, 3 , a)
+        i= 0
+      }
+    }
+
     operation1.innerHTML = `${a}`
     operation1.style.color = 'gray'
   }
