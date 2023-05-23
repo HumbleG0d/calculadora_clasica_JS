@@ -45,22 +45,32 @@ function performCalculation(text){
     operation1.style.color = 'red'
   }
   else{
-    //*[1 , + , 2 , - , 3 , * , 4]
     for(let i = 0 ; i < text.length ; i++){
-      if(text[i] === TYPE_OPERATIONS.PRODUCT){
-        operation = OPERATIONS.product(parseInt(text[i - 1]) , parseInt(text[i + 1]))
+      if(text[i] === TYPE_OPERATIONS.DIVISION){
+        operation = OPERATIONS.division(parseFloat(text[i - 1]) , parseFloat(text[i + 1]))
         a = operation
         text.splice(i-1, 3 , a)
       }
     }
+    
+    //*[1 , + , 2 , - , 3 , * , 4]
+    for(let i = 0 ; i < text.length ; i++){
+      if(text[i] === TYPE_OPERATIONS.PRODUCT){
+        operation = OPERATIONS.product(parseFloat(text[i - 1]) , parseFloat(text[i + 1]))
+        a = operation
+        text.splice(i-1, 3 , a)
+        i= 0
+      }
+    }
+
     for (let i = 0 ; i < text.length ; i++) {
-      if(i === 0) a = parseInt(text[i])
+      if(i === 0) a = parseFloat(text[i])
       if(text[i] === TYPE_OPERATIONS.ADD){
-        operation = OPERATIONS.add(a , parseInt(text[i + 1]))
+        operation = OPERATIONS.add(a , parseFloat(text[i + 1]))
         a = operation
       }
       else if(text[i] === TYPE_OPERATIONS.SUBSTRACT){
-        operation = OPERATIONS.susbtract(a , parseInt(text[i + 1]))
+        operation = OPERATIONS.susbtract(a , parseFloat(text[i + 1]))
         a = operation
       }
     }
