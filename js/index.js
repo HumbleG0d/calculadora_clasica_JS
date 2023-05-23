@@ -40,11 +40,19 @@ function performCalculation(text){
   let a
   const operation1 = document.getElementById('operation__1')
   operation1.innerHTML = ' '
-  if(text[text.length - 1] === TYPE_OPERATIONS.ADD){
+  if(text[text.length - 1] === TYPE_OPERATIONS.ADD || text[text.length - 1] === TYPE_OPERATIONS.PRODUCT || text[text.length - 1] === TYPE_OPERATIONS.SUBSTRACT || text[text.length - 1] === TYPE_OPERATIONS.DIVISION){
     operation1.innerHTML = 'ERROR'
     operation1.style.color = 'red'
   }
   else{
+    //*[1 , + , 2 , - , 3 , * , 4]
+    for(let i = 0 ; i < text.length ; i++){
+      if(text[i] === TYPE_OPERATIONS.PRODUCT){
+        operation = OPERATIONS.product(parseInt(text[i - 1]) , parseInt(text[i + 1]))
+        a = operation
+        text.splice(i-1, 3 , a)
+      }
+    }
     for (let i = 0 ; i < text.length ; i++) {
       if(i === 0) a = parseInt(text[i])
       if(text[i] === TYPE_OPERATIONS.ADD){
