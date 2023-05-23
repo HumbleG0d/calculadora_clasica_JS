@@ -54,6 +54,10 @@ body {
     rgba(47, 74, 109, 1) 100%
   );
   border: 0;
+  color: rgb(221, 225, 230);
+  font-size: 30px;
+  font-weight: 700;
+  padding: 0 0.625rem;
 }
 
 .calulator__input:focus {
