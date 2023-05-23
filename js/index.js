@@ -51,6 +51,10 @@ function performCalculation(text){
         operation = OPERATIONS.add(a , parseInt(text[i + 1]))
         a = operation
       }
+      else if(text[i] === TYPE_OPERATIONS.SUBSTRACT){
+        operation = OPERATIONS.susbtract(a , parseInt(text[i + 1]))
+        a = operation
+      }
     }
     operation1.innerHTML = `${a}`
     operation1.style.color = 'gray'
