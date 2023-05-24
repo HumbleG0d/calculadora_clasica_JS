@@ -4,6 +4,6 @@ export const TYPE_OPERATIONS = {
   ADD: '+',
   PARENTHESIS: '(',
   PERCENTAGE: '%',
-  PRODUCT : '*',
+  PRODUCT : 'x',
   DELETE: 'C'
 }
