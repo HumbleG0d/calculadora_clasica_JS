@@ -1,27 +1,40 @@
 import { TYPE_OPERATIONS } from './types_operations.js'
 import { OPERATIONS } from './operation.js'
+import { pressNumber} from './keyboard_numbers.js'
+import { getInputValue } from './input_text.js'
 
 const getTextInput = () => {
   const input = document.getElementById('calulator__input')
-  let text 
+  let text = ' '
   input.addEventListener('keyup', () => {
     text = input.value
-    const reg = /\s/g
-    text = text.replace(reg, '')
-    //*split(/(\d+)/) nos permite separar la cadena por numero pero sin perder dicho numero , esto gracias al agrupamiento ().
-    text = text.split(/(\d+)/).filter(char => char != '')
+    text = getInputValue(text)
   })
-
+  
+  pressNumber()
+  
   //* Al precionar el boton igual , se calcula.
   const equal = document.getElementById('equal')
   equal.addEventListener('click' , () => {
-    performCalculation(text)
+    if(text === ' '){
+      performCalculation(getInputValue(input.value))
+    } 
+    else{
+      performCalculation(text)
+      text = ' '
+    }
   })
 
   //* Al precionar la tecla enter , se calcula
   document.addEventListener('keydown' , (e) => {
     if(e.key === 'Enter' || e.key === 'Return'){
-      performCalculation(text)
+      if(text === ' '){
+        performCalculation(getInputValue(input.value))
+      } 
+      else{
+        performCalculation(text)
+        text = ' '
+      }   
     }
   })
 
