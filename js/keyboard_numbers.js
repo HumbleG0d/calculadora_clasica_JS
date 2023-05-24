@@ -5,7 +5,12 @@ export const pressNumber = () => {
 
   numbers.forEach((element) => {
     element.addEventListener('click' , () => {
-      input.value += parseInt(element.innerHTML)
+      if(element.innerHTML.replace(/\s/g,'') === '.'){
+        input.value += '.'
+      }
+      else{
+        input.value += parseFloat(element.innerHTML)
+      }
     })
   })
 
